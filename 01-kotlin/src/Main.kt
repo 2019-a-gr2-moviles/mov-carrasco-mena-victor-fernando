@@ -103,6 +103,38 @@ fun main(args: Array<String>){
     notasTresWhen.forEach {
         println("Notas 3: $it")
     }
+
+    val respuestaFilter = notas
+        .filter {// Filtar el arreglo
+        it in 3..4
+        // it > 2 && it < 5
+        }.map {// Mutar o cambiar el arreglo
+            it * 2
+        }
+
+    respuestaFilter.forEach { println(it) }
+
+    val novias = arrayListOf(1 ,2, 3, 4, 5)
+
+    val respuestaNovia = novias.any {
+        it == 3
+    }
+
+    println(respuestaNovia)// true
+
+    val tazos = arrayListOf(1,2,3,4,5,6,7,8,9)
+
+//    val respuestaTazos = tazos.all{
+//        it > 1 //Todos son?
+//    }
+
+//    println(respuestaTazos)//falso
+
+    val totalTazos = tazos.reduce{ valorAcumulado, tazo ->
+        valorAcumulado + tazo
+    }
+
+    println(totalTazos)
 }
 
 fun holaMundo(mensaje: String){
