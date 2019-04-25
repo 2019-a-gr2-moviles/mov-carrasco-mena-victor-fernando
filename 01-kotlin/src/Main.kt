@@ -135,6 +135,9 @@ fun main(args: Array<String>){
     }
 
     println(totalTazos)
+
+    val numerito = Numero("1")
+
 }
 
 fun holaMundo(mensaje: String){
@@ -167,3 +170,108 @@ fun estaJalado(nota: Double):Double{
     }
     return nota
 }
+
+class Usuario(val cedula:String){
+    var nombre:String = ""
+    var apellido:String = ""
+
+    constructor(cedulaM:String,apellido:String ):this(cedulaM){
+
+        this.apellido=apellido
+    }
+
+}
+
+class UsuarioKT(var nombre:String,
+                var apellido: String,
+                private var id:Int,
+                protected var id_:Int){
+
+    init{
+
+    }
+    public fun hola():String{
+        return this.apellido
+    }
+    private fun hola2(){
+
+    }
+    protected fun hola3(){
+
+    }
+
+    companion object {
+        val gravedad = 10.5
+        fun correr(){
+            println("Estoy corriendo en $gravedad")
+        }
+    }
+}
+
+class BaseDeDatos{
+    companion object {
+        val usuarios = arrayListOf(1,2,3)
+        fun agregarUsuario(usuario: Int){
+            this.usuarios.add(usuario)
+        }
+        fun eliminarUsuario(usuario: Int){
+            // this.usuarios
+        }
+    }
+}
+
+fun aa(){
+    UsuarioKT.gravedad// propiedad estática
+    UsuarioKT.correr()// metodo estática
+}
+
+/*fun a(){
+    var adrian = UsuarioKT("a","b")
+    adrian.nombre="asas"
+}*/
+
+class Numero(var numero:Int){
+
+    constructor(numeroString:String):this(numeroString.toInt()){
+        println("cosntructor")
+    }
+    init {
+        println("Init")
+    }
+}
+
+class A{
+    //A.correr() // Metodo Estática
+}
+
+open class Numeros(var numeroUno:Int,
+              var numeroDos:Int){
+
+}
+
+class Suma(numeroUnos:Int,
+           numeroDoss:Int):
+    Numeros(numeroUnos,numeroDoss){
+
+}
+fun cc(){
+    val a = Suma(1,2)
+
+}
+
+fun presley(requerido:Int,
+            opcional:Int = 1,
+            nulo:Int?){//Este valor aveces puede tener un valor nulo
+    if(nulo != null){
+        nulo.nombre
+    }
+    val nombresito:String? = nulo?.nombre.toString()// Elvis operator
+    nulo!!.nombre
+
+}
+fun cddd(){
+    presley(requerido = 1,nulo = 0)//named parameters
+    presley(1,1,1)
+    presley(1,1,null)
+}
+
