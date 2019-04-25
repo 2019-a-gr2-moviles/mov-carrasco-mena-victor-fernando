@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44c58d7d-236d-4145-9646-d249d3f68418" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ejemplo/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ejemplo/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
-    </list>
+    <list default="true" id="44c58d7d-236d-4145-9646-d249d3f68418" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/src/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="579">
-              <caret line="268" column="17" selection-start-line="268" selection-start-column="17" selection-end-line="268" selection-end-column="17" />
+              <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -138,12 +134,12 @@
       <updated>1555012539616</updated>
       <workItem from="1555012545587" duration="3851000" />
       <workItem from="1555097479582" duration="5406000" />
-      <workItem from="1556221707999" duration="4364000" />
+      <workItem from="1556221707999" duration="4762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13621000" />
+    <option name="totallyTimeSpent" value="14019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="35" width="1518" height="1337" extended-state="0" />
@@ -201,7 +197,7 @@
     <entry file="file://$PROJECT_DIR$/src/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="579">
-          <caret line="268" column="17" selection-start-line="268" selection-start-column="17" selection-end-line="268" selection-end-column="17" />
+          <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
