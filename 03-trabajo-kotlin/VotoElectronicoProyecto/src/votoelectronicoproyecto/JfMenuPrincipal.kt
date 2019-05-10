@@ -6,8 +6,6 @@
 package votoelectronicoproyecto
 
 import javax.swing.JOptionPane
-import java.sql.*
-import modelo.SqlUsuarios
 import modelo.Usuarios
 
 /**

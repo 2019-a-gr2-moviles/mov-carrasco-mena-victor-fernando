@@ -7,11 +7,8 @@ package modelo
 
 
 import com.mysql.jdbc.Connection
-import java.sql.DriverManager
-import java.sql.SQLException
-import java.util.logging.Level
-import java.util.logging.Logger
 
+import java.io.File
 /**
  *
  * @author Primario
@@ -23,19 +20,6 @@ open class Conexion {
     private val url = "jdbc:mysql://localhost:3306/$base"
     private var con: Connection? = null
 
-    val conexion: Connection?
-        get() {
 
-            try {
-                Class.forName("com.mysql.jdbc.Driver")
-                con = DriverManager.getConnection(this.url, this.user, this.password) as Connection
 
-            } catch (e: SQLException) {
-                System.err.println(e)
-            } catch (ex: ClassNotFoundException) {
-                Logger.getLogger(Conexion::class.java!!.getName()).log(Level.SEVERE, null, ex)
-            }
-
-            return con
-        }
 }
