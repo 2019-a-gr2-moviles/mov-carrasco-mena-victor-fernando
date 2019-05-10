@@ -7,12 +7,12 @@ package votoelectronicoproyecto
 
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
-
+import java.swing.*
 /**
  *
  * @author Hp
  */
-class JfAdministrador : javax.swing.JFrame(), ActionListener {
+class JfAdministrador : JFrame(), ActionListener {
 
     /**
      * Creates new form JfAdministrador

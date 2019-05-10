@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package votoelectronicoproyecto;
+package votoelectronicoproyecto
 
 /**
  *
  * @author Hp
  */
-public class VotoElectronicoProyecto {
+object VotoElectronicoProyecto {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    fun main(args: Array<String>) {
         // TODO code application logic here
     }
-    
+
 }
