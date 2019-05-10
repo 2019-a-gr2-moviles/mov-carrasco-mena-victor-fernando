@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="VotoElectronicoProyecto">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/VotoElectronicoProyecto.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
