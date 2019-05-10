@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/lib/RSPanelSlider.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/RSButtonIconI.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jcalendar-1.3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/JPlaceHolder.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/swingx-core-1.6.2-2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/edisoncorSX.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/mysql-connector-java-5.1.23-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/JPanelSlider.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/MaterialButtoms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/RSNotify v1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/Sistemadevotacion.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/AbsoluteLayout.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/AnimatonClass.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/JPlaceHolderPassw.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
