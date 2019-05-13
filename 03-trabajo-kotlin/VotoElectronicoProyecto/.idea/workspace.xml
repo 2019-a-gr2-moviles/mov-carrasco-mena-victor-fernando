@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30c30b0a-0590-4daf-b49c-6e5ad4a3a201" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/archivos/lista-de-candidatos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/Conexion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/Conexion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/SqlCandidato.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/SqlUsuarios.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/SqlVotante.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/SqlVotos.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/votoelectronicoproyecto/JfMenuPrincipal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/votoelectronicoproyecto/JfMenuPrincipal.kt" afterDir="false" />
-    </list>
+    <list default="true" id="30c30b0a-0590-4daf-b49c-6e5ad4a3a201" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modelo/Candidato.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+            <state relative-caret-position="272">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -148,7 +139,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557513977656" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557513981506" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -198,16 +189,15 @@
       <workItem from="1557373599903" duration="3068000" />
       <workItem from="1557455849567" duration="3209000" />
       <workItem from="1557511014339" duration="255000" />
-      <workItem from="1557512793755" duration="1049000" />
+      <workItem from="1557512793755" duration="1451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7581000" />
+    <option name="totallyTimeSpent" value="7983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18381241" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -304,8 +294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/Candidato.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="272">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
