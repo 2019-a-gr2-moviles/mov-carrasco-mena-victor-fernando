@@ -12,51 +12,51 @@ package modelo
 class Votante : Estudiante() {
 
 
-    override fun setNivel(nivel: Int) {
+    fun setNivel(nivel: Int) {
         super.nivel = nivel //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun setCarrera(carrera: String) {
+    fun setCarrera(carrera: String) {
         super.carrera = carrera //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun setTipo_id(tipo_id: String) {
+    fun setTipo_id(tipo_id: String) {
         super.tipo_id = tipo_id //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun setApellido(apellido: String) {
+    fun setApellido(apellido: String) {
         super.apellido = apellido //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun setNombre(nombre: String) {
+    fun setNombre(nombre: String) {
         super.nombre = nombre //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun setIdentificacion(identificacion: Int) {
+    fun setIdentificacion(identificacion: Int) {
         super.identificacion = identificacion //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun getNivel(): Int {
+    fun getNivel(): Int {
         return super.nivel //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun getCarrera(): String {
+    fun getCarrera(): String {
         return super.carrera //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun getTipo_id(): String {
+    fun getTipo_id(): String {
         return super.tipo_id //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun getApellido(): String {
+    fun getApellido(): String {
         return super.apellido //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun getNombre(): String {
+    fun getNombre(): String {
         return super.nombre //To change body of generated methods, choose Tools | Templates.
     }
 
-    override fun getIdentificacion(): Int {
+    fun getIdentificacion(): Int {
         return super.identificacion //To change body of generated methods, choose Tools | Templates.
     }
 

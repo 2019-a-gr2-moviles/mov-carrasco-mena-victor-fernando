@@ -17,5 +17,7 @@ open class Estudiante {
     open var carrera: String? = null
     open var nivel: Int = 0
 
+    constructor()
+
 
 }
