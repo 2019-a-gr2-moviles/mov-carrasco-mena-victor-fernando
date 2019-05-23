@@ -15,10 +15,17 @@ class Parcelable : AppCompatActivity() {
         val adrian = this.intent.
             getParcelableExtra<Usuario>("usuario")
 
+        val cachetes:Mascota = this.intent.
+            getParcelableExtra<Mascota>("usuario")
+
         Log.i("pacelable","Nombre ${adrian?.nombre}")
         Log.i("pacelable","Nombre ${adrian?.edad}")
         Log.i("pacelable","Nombre ${adrian?.fechaNacimiento}")
         Log.i("pacelable","Nombre ${adrian?.sueldo}")
+
+        Log.i("pacelable","Nombre ${cachetes?.nombre}")
+        Log.i("pacelable","Nombre ${cachetes?.duenio}")
+
     }
 
     fun regresarMenu(){

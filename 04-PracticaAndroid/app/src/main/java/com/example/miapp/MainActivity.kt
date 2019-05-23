@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
             Date(),
             12.12)
         intentExplicito.putExtra("usuario",adrian)
+
+        val cachetes = Mascota("Adrian",adrian)
+        intentExplicito.putExtra("mascota",cachetes)
+
         startActivity(intentExplicito)
     }
 }
