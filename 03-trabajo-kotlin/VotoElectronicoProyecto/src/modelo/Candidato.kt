@@ -11,52 +11,52 @@ package modelo
  */
 class Candidato : Estudiante() {
 
-    override//To change body of generated methods, choose Tools | Templates.
-    //To change body of generated methods, choose Tools | Templates.
-    var nivel: Int
-        get() = super.nivel
-        set(nivel) {
-            super.nivel = nivel
-        }
+    override fun setNivel(nivel: Int) {
+        super.setNivel(nivel) //To change body of generated methods, choose Tools | Templates.
+    }
 
-    override//To change body of generated methods, choose Tools | Templates.
-    //To change body of generated methods, choose Tools | Templates.
-    var carrera: String?
-        get() = super.carrera
-        set(carrera) {
-            super.carrera = carrera
-        }
+    override fun setCarrera(carrera: String) {
+        super.setCarrera(carrera) //To change body of generated methods, choose Tools | Templates.
+    }
 
-    override//To change body of generated methods, choose Tools | Templates.
-    //To change body of generated methods, choose Tools | Templates.
-    var tipo_id: String?
-        get() = super.tipo_id
-        set(tipo_id) {
-            super.tipo_id = tipo_id
-        }
+    override fun setTipo_id(tipo_id: String) {
+        super.setTipo_id(tipo_id) //To change body of generated methods, choose Tools | Templates.
+    }
 
-    override//To change body of generated methods, choose Tools | Templates.
-    //To change body of generated methods, choose Tools | Templates.
-    var apellido: String?
-        get() = super.apellido
-        set(apellido) {
-            super.apellido = apellido
-        }
+    override fun setApellido(apellido: String) {
+        super.setApellido(apellido) //To change body of generated methods, choose Tools | Templates.
+    }
 
-    override//To change body of generated methods, choose Tools | Templates.
-    //To change body of generated methods, choose Tools | Templates.
-    var nombre: String?
-        get() = super.nombre
-        set(nombre) {
-            super.nombre = nombre
-        }
+    override fun setNombre(nombre: String) {
+        super.setNombre(nombre) //To change body of generated methods, choose Tools | Templates.
+    }
 
-    override//To change body of generated methods, choose Tools | Templates.
-    //To change body of generated methods, choose Tools | Templates.
-    var identificacion: Int
-        get() = super.identificacion
-        set(identificacion) {
-            super.identificacion = identificacion
-        }
+    override fun setIdentificacion(identificacion: Int) {
+        super.setIdentificacion(identificacion) //To change body of generated methods, choose Tools | Templates.
+    }
+
+    override fun getNivel(): Int {
+        return super.getNivel() //To change body of generated methods, choose Tools | Templates.
+    }
+
+    override fun getCarrera(): String? {
+        return super.getCarrera() //To change body of generated methods, choose Tools | Templates.
+    }
+
+    override fun getTipo_id(): String? {
+        return super.getTipo_id() //To change body of generated methods, choose Tools | Templates.
+    }
+
+    override fun getApellido(): String? {
+        return super.getApellido() //To change body of generated methods, choose Tools | Templates.
+    }
+
+    override fun getNombre(): String? {
+        return super.getNombre() //To change body of generated methods, choose Tools | Templates.
+    }
+
+    override fun getIdentificacion(): Int {
+        return super.getIdentificacion() //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
