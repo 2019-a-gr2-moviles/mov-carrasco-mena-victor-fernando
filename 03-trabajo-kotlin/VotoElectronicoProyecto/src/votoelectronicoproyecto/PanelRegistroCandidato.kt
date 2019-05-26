@@ -10,7 +10,6 @@ import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
 import javax.swing.JOptionPane
 import modelo.Candidato
-import modelo.SqlCandidato
 import modelo.Votos
 
 /**
@@ -49,8 +48,8 @@ class PanelRegistroCandidato : javax.swing.JPanel(), MouseListener {
     init {
         initComponents()
         butInfo!!.addMouseListener(object : MouseAdapter() {
-            @Override
-            fun mouseEntered(e: MouseEvent) {
+
+            override fun mouseEntered(e: MouseEvent) {
                 JOptionPane.showMessageDialog(null, "Por favor ingrese solo el id del candidato para buscar y para eliminar")
             }
 
@@ -122,41 +121,25 @@ class PanelRegistroCandidato : javax.swing.JPanel(), MouseListener {
 
         butRegistrarCandidato!!.setFont(java.awt.Font("Times New Roman", 1, 14)) // NOI18N
         butRegistrarCandidato!!.setText("Registrar")
-        butRegistrarCandidato!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butRegistrarCandidatoActionPerformed(evt)
-            }
-        })
+        butRegistrarCandidato!!.addActionListener { evt -> butRegistrarCandidatoActionPerformed(evt) }
         add(butRegistrarCandidato)
         butRegistrarCandidato!!.setBounds(380, 130, 88, 33)
 
         butBuscarCandidato!!.setFont(java.awt.Font("Times New Roman", 1, 14)) // NOI18N
         butBuscarCandidato!!.setText("Buscar")
-        butBuscarCandidato!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butBuscarCandidatoActionPerformed(evt)
-            }
-        })
+        butBuscarCandidato!!.addActionListener { evt -> butBuscarCandidatoActionPerformed(evt) }
         add(butBuscarCandidato)
         butBuscarCandidato!!.setBounds(380, 190, 91, 33)
 
         butLimpiarDatosCandidato!!.setFont(java.awt.Font("Times New Roman", 1, 14)) // NOI18N
         butLimpiarDatosCandidato!!.setText("Limpiar")
-        butLimpiarDatosCandidato!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butLimpiarDatosCandidatoActionPerformed(evt)
-            }
-        })
+        butLimpiarDatosCandidato!!.addActionListener { evt -> butLimpiarDatosCandidatoActionPerformed(evt) }
         add(butLimpiarDatosCandidato)
         butLimpiarDatosCandidato!!.setBounds(380, 320, 91, 33)
 
         butBorrarCandidatos!!.setFont(java.awt.Font("Times New Roman", 1, 14)) // NOI18N
         butBorrarCandidatos!!.setText("Borrar")
-        butBorrarCandidatos!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butBorrarCandidatosActionPerformed(evt)
-            }
-        })
+        butBorrarCandidatos!!.addActionListener { evt -> butBorrarCandidatosActionPerformed(evt) }
         add(butBorrarCandidatos)
         butBorrarCandidatos!!.setBounds(380, 250, 91, 33)
         add(txtNombreCandidato)
@@ -179,95 +162,23 @@ class PanelRegistroCandidato : javax.swing.JPanel(), MouseListener {
         add(txtCarreraCandidato)
         txtCarreraCandidato!!.setBounds(140, 300, 100, 24)
 
-        butInfo!!.setIcon(javax.swing.ImageIcon(getClass().getResource("/Logos/informacion.png"))) // NOI18N
-        add(butInfo)
         butInfo!!.setBounds(440, 380, 30, 32)
 
-        labFondoSistema!!.setIcon(javax.swing.ImageIcon(getClass().getResource("/Logos/FondoSistema.jpg"))) // NOI18N
-        add(labFondoSistema)
-        labFondoSistema!!.setBounds(0, 0, 500, 430)
     }// </editor-fold>//GEN-END:initComponents
 
     private fun butRegistrarCandidatoActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butRegistrarCandidatoActionPerformed
         // TODO add your handling code here:
-        val modSql = SqlCandidato()
-        val votos = Votos()
-        val numCandidatos = modSql.contarCandidatos(votos)
-        System.out.println("numero de camdidatos registrados: $numCandidatos")
-        if (numCandidatos < 3) {
-            if (txtNombreCandidato!!.getText().equals("") || txtApellidoCandidato!!.getText().equals("") || txtIdCandidato!!.getText().equals("") || cboTipoIdCandidato!!.getSelectedItem().toString().equals("") || txtCarreraCandidato!!.getText().equals("") || txtNivelCandidato!!.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "Hay campos vacios, debe llenar todos los datos")
-            } else {
-
-                mod.nombre = txtNombreCandidato!!.getText()
-                mod.apellido = txtApellidoCandidato!!.getText()
-                mod.identificacion = Integer.parseInt(txtIdCandidato!!.getText())
-                if (cboTipoIdCandidato!!.getSelectedItem().equals("cedula")) {
-                    val Tipoid = "ci"
-                    mod.tipo_id = Tipoid
-                } else if (cboTipoIdCandidato!!.getSelectedItem().equals("pasaporte")) {
-                    val Tipoid = "ps"
-                    mod.tipo_id = Tipoid
-                }
-
-                mod.carrera = txtCarreraCandidato!!.getText()
-                mod.nivel = Integer.parseInt(txtNivelCandidato!!.getText())
-
-                if (modSql.registrar(mod)) {
-                    JOptionPane.showMessageDialog(null, "Registro Guardado")
-                    limpiar()
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error al Guardar")
-                    limpiar()
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Ya no se permiten registrar mas candidatos. Si desea puede borrar y añadr un candidato")
-        }
-
 
     }//GEN-LAST:event_butRegistrarCandidatoActionPerformed
 
     private fun butBuscarCandidatoActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butBuscarCandidatoActionPerformed
         // TODO add your handling code here:
-        val modSql = SqlCandidato()
-
-        if (txtIdCandidato!!.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debe ingresar un id")
-        } else {
-            mod.identificacion = Integer.parseInt(txtIdCandidato!!.getText())
-            modSql.buscar(mod)
-            txtNombreCandidato!!.setText(mod.nombre)
-            txtApellidoCandidato!!.setText(mod.apellido)
-            txtIdCandidato!!.setText(String.valueOf(mod.identificacion))
-            if (mod.tipo_id!!.equals("ci")) {
-                cboTipoIdCandidato!!.setSelectedItem("cedula")
-            } else if (mod.tipo_id!!.equals("ps")) {
-                cboTipoIdCandidato!!.setSelectedItem("pasaporte")
-            }
-            txtCarreraCandidato!!.setText(mod.carrera)
-            txtNivelCandidato!!.setText(String.valueOf(mod.nivel))
-        }
 
     }//GEN-LAST:event_butBuscarCandidatoActionPerformed
 
     private fun butBorrarCandidatosActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butBorrarCandidatosActionPerformed
         // TODO add your handling code here:
-        val modSql = SqlCandidato()
 
-        if (txtIdCandidato!!.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debe ingresar un id")
-        } else {
-            mod.identificacion = Integer.parseInt(txtIdCandidato!!.getText())
-            if (modSql.eliminar(mod)) {
-                JOptionPane.showMessageDialog(null, "Registro Borrado")
-                limpiar()
-            } else {
-                JOptionPane.showMessageDialog(null, "Error al Borrar")
-                limpiar()
-            }
-        }
     }//GEN-LAST:event_butBorrarCandidatosActionPerformed
 
     private fun butLimpiarDatosCandidatoActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butLimpiarDatosCandidatoActionPerformed
@@ -284,28 +195,24 @@ class PanelRegistroCandidato : javax.swing.JPanel(), MouseListener {
     }
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    fun mouseClicked(e: MouseEvent) {
+
+    override fun mouseClicked(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mousePressed(e: MouseEvent) {
+    override fun mousePressed(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mouseReleased(e: MouseEvent) {
+    override fun mouseReleased(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mouseEntered(e: MouseEvent) {
+    override fun mouseEntered(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mouseExited(e: MouseEvent) {
+    override fun mouseExited(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 }

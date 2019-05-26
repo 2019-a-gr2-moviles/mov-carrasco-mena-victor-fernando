@@ -5,9 +5,6 @@
  */
 package votoelectronicoproyecto
 
-import javax.swing.JOptionPane
-import modelo.Usuarios
-
 /**
  *
  * @author Hp
@@ -59,7 +56,6 @@ class JfMenuPrincipal : javax.swing.JFrame() {
 
         butInformacion!!.font = java.awt.Font("Times New Roman", 1, 14) // NOI18N
         butInformacion!!.text = "INFORMACIÓN "
-        butInformacion!!.addActionListener { evt -> butInformacionActionPerformed(evt) }
         contentPane.add(butInformacion)
         butInformacion!!.setBounds(29, 434, 145, 50)
 
@@ -85,7 +81,6 @@ class JfMenuPrincipal : javax.swing.JFrame() {
         contentPane.add(labContraseña)
         labContraseña!!.setBounds(210, 300, 89, 22)
 
-        txtContraseña!!.addActionListener { evt -> txtContraseñaActionPerformed(evt) }
         contentPane.add(txtContraseña)
         txtContraseña!!.setBounds(210, 330, 236, 34)
 
@@ -96,7 +91,6 @@ class JfMenuPrincipal : javax.swing.JFrame() {
 
         btnAcceder!!.font = java.awt.Font("Times New Roman", 1, 14) // NOI18N
         btnAcceder!!.text = "ACCEDER"
-        btnAcceder!!.addActionListener { evt -> btnAccederActionPerformed(evt) }
         contentPane.add(btnAcceder)
         btnAcceder!!.setBounds(440, 430, 170, 50)
 
@@ -109,90 +103,6 @@ class JfMenuPrincipal : javax.swing.JFrame() {
         pack()
     }// </editor-fold>//GEN-END:initComponents
 
-    private fun butInformacionActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butInformacionActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Bienvenido al sistema de votación etc etc...\n" + "Recuerde para ingresar al sistema su usuario y contrañesa son su número de ID o cédula")
 
-    }//GEN-LAST:event_butInformacionActionPerformed
-
-    private fun txtContraseñaActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_txtContraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtContraseñaActionPerformed
-
-    private fun btnAccederActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_btnAccederActionPerformed
-        // TODO add your handling code here:
-        val modSql = SqlUsuarios()
-        val mod = Usuarios()
-
-        val pass = String(txtContraseña!!.text)
-
-        if (txtUsuario!!.text != "" && pass != "") {
-            mod.usuario = txtUsuario!!.text
-            mod.password = pass
-
-            if (modSql.loginAdmin(mod)) {
-
-                this.dispose()
-
-                if (frmAdmin == null) {
-                    frmAdmin = JfAdministrador()
-                    frmAdmin!!.isVisible = true
-                }
-
-            } else if (modSql.loginVotante(mod)) {
-                this.dispose()
-
-                if (frmVotante == null) {
-                    frmVotante = JfVotante()
-                    frmVotante!!.isVisible = true
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Datos incorrectos")
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Debe ingresar sus datos")
-        }
-
-    }//GEN-LAST:event_btnAccederActionPerformed
-
-    companion object {
-
-        var frmAdmin: JfAdministrador? = null
-        var frmVotante: JfVotante? = null
-
-        /**
-         * @param args the command line arguments
-         */
-        @JvmStatic
-        fun main(args: Array<String>) {
-            /* Set the Nimbus look and feel */
-            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-            try {
-                for (info in javax.swing.UIManager.getInstalledLookAndFeels()) {
-                    if ("Nimbus" == info.name) {
-                        javax.swing.UIManager.setLookAndFeel(info.className)
-                        break
-                    }
-                }
-            } catch (ex: ClassNotFoundException) {
-                java.util.logging.Logger.getLogger(JfMenuPrincipal::class.java!!.getName()).log(java.util.logging.Level.SEVERE, null, ex)
-            } catch (ex: InstantiationException) {
-                java.util.logging.Logger.getLogger(JfMenuPrincipal::class.java!!.getName()).log(java.util.logging.Level.SEVERE, null, ex)
-            } catch (ex: IllegalAccessException) {
-                java.util.logging.Logger.getLogger(JfMenuPrincipal::class.java!!.getName()).log(java.util.logging.Level.SEVERE, null, ex)
-            } catch (ex: javax.swing.UnsupportedLookAndFeelException) {
-                java.util.logging.Logger.getLogger(JfMenuPrincipal::class.java!!.getName()).log(java.util.logging.Level.SEVERE, null, ex)
-            }
-
-            //</editor-fold>
-            //</editor-fold>
-
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater { JfMenuPrincipal().isVisible = true }
-        }
-    }
     // End of variables declaration//GEN-END:variables
 }

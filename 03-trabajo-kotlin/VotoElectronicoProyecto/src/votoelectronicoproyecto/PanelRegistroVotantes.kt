@@ -10,8 +10,6 @@ import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
 import javax.swing.JOptionPane
-import modelo.SqlVotante
-import modelo.Votante
 
 /**
  *
@@ -22,8 +20,6 @@ class PanelRegistroVotantes : javax.swing.JPanel(), MouseListener {
     /**
      * Creates new form PanelRegistroVotantes
      */
-
-    internal var mod = Votante()
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -50,8 +46,7 @@ class PanelRegistroVotantes : javax.swing.JPanel(), MouseListener {
     init {
         initComponents()
         butInfo!!.addMouseListener(object : MouseAdapter() {
-            @Override
-            fun mouseEntered(e: MouseEvent) {
+            override fun mouseEntered(e: MouseEvent) {
                 JOptionPane.showMessageDialog(null, "Por favor ingrese solo el id del votante para buscar y para eliminar")
             }
 
@@ -130,41 +125,24 @@ class PanelRegistroVotantes : javax.swing.JPanel(), MouseListener {
 
         butBorrarVotante!!.setFont(java.awt.Font("Times New Roman", 1, 14)) // NOI18N
         butBorrarVotante!!.setText("Borrar")
-        butBorrarVotante!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butBorrarVotanteActionPerformed(evt)
-            }
-        })
         add(butBorrarVotante)
         butBorrarVotante!!.setBounds(377, 314, 91, 33)
 
         butLimpiarDatosVotante!!.setFont(java.awt.Font("Times New Roman", 1, 14)) // NOI18N
         butLimpiarDatosVotante!!.setText("Limpiar")
-        butLimpiarDatosVotante!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butLimpiarDatosVotanteActionPerformed(evt)
-            }
-        })
+
         add(butLimpiarDatosVotante)
         butLimpiarDatosVotante!!.setBounds(380, 240, 91, 33)
 
         butBuscarVotante!!.setFont(java.awt.Font("Times New Roman", 1, 14)) // NOI18N
         butBuscarVotante!!.setText("Buscar")
-        butBuscarVotante!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butBuscarVotanteActionPerformed(evt)
-            }
-        })
+
         add(butBuscarVotante)
         butBuscarVotante!!.setBounds(380, 180, 91, 33)
 
         butRegistrarVotante!!.setFont(java.awt.Font("Times New Roman", 1, 14)) // NOI18N
         butRegistrarVotante!!.setText("Registrar")
-        butRegistrarVotante!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butRegistrarVotanteActionPerformed(evt)
-            }
-        })
+
         add(butRegistrarVotante)
         butRegistrarVotante!!.setBounds(377, 110, 88, 33)
 
@@ -176,24 +154,13 @@ class PanelRegistroVotantes : javax.swing.JPanel(), MouseListener {
         txtCarreraVotante!!.setBounds(140, 280, 100, 30)
 
         cboTipoId!!.setModel(javax.swing.DefaultComboBoxModel(arrayOf("cedula", "pasaporte")))
-        cboTipoId!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                cboTipoIdActionPerformed(evt)
-            }
-        })
+
         add(cboTipoId)
         cboTipoId!!.setBounds(140, 230, 100, 26)
 
-        butInfo!!.setIcon(javax.swing.ImageIcon(getClass().getResource("/Logos/informacion.png"))) // NOI18N
-        butInfo!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butInfoActionPerformed(evt)
-            }
-        })
         add(butInfo)
         butInfo!!.setBounds(450, 390, 30, 32)
 
-        jLabel1!!.setIcon(javax.swing.ImageIcon(getClass().getResource("/Logos/FondoSistema.jpg"))) // NOI18N
         jLabel1!!.setText("jLabel1")
         add(jLabel1)
         jLabel1!!.setBounds(0, 0, 500, 430)
@@ -201,38 +168,6 @@ class PanelRegistroVotantes : javax.swing.JPanel(), MouseListener {
         getAccessibleContext().setAccessibleName("")
     }// </editor-fold>//GEN-END:initComponents
 
-    private fun butRegistrarVotanteActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butRegistrarVotanteActionPerformed
-        // TODO add your handling code here:
-        val modSql = SqlVotante()
-
-
-        if (txtNombreVotante!!.getText().equals("") || txtApellidoVotante!!.getText().equals("") || txtIdVotante!!.getText().equals("") || cboTipoId!!.getSelectedItem().toString().equals("") || txtCarreraVotante!!.getText().equals("") || txtNivelVotante!!.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Hay campos vacios, debe llenar todos los datos")
-        } else {
-
-            mod.setNombre(txtNombreVotante!!.getText())
-            mod.setApellido(txtApellidoVotante!!.getText())
-            mod.setIdentificacion(Integer.parseInt(txtIdVotante!!.getText()))
-            if (cboTipoId!!.getSelectedItem().equals("cedula")) {
-                val Tipoid = "ci"
-                mod.setTipo_id(Tipoid)
-            } else if (cboTipoId!!.getSelectedItem().equals("pasaporte")) {
-                val Tipoid = "ps"
-                mod.setTipo_id(Tipoid)
-            }
-
-            mod.setCarrera(txtCarreraVotante!!.getText())
-            mod.setNivel(Integer.parseInt(txtNivelVotante!!.getText()))
-
-            if (modSql.registrar(mod)) {
-                JOptionPane.showMessageDialog(null, "Registro Guardado")
-                limpiar()
-            } else {
-                JOptionPane.showMessageDialog(null, "Error al Guardar")
-                limpiar()
-            }
-        }
-    }//GEN-LAST:event_butRegistrarVotanteActionPerformed
 
     private fun limpiar() {
         txtNombreVotante!!.setText("")
@@ -242,84 +177,23 @@ class PanelRegistroVotantes : javax.swing.JPanel(), MouseListener {
         txtNivelVotante!!.setText("")
     }
 
-    private fun cboTipoIdActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_cboTipoIdActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_cboTipoIdActionPerformed
-
-    private fun butLimpiarDatosVotanteActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butLimpiarDatosVotanteActionPerformed
-        // TODO add your handling code here:
-        limpiar()
-    }//GEN-LAST:event_butLimpiarDatosVotanteActionPerformed
-
-    private fun butBorrarVotanteActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butBorrarVotanteActionPerformed
-        // TODO add your handling code here:
-        val modSql = SqlVotante()
-
-        if (txtIdVotante!!.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debe ingresar un id")
-        } else {
-            mod.setIdentificacion(Integer.parseInt(txtIdVotante!!.getText()))
-            if (modSql.eliminar(mod)) {
-                JOptionPane.showMessageDialog(null, "Registro Borrado")
-                limpiar()
-            } else {
-                JOptionPane.showMessageDialog(null, "Error al Borrar")
-                limpiar()
-            }
-        }
-    }//GEN-LAST:event_butBorrarVotanteActionPerformed
-
-    private fun butInfoActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butInfoActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_butInfoActionPerformed
-
-    private fun butBuscarVotanteActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butBuscarVotanteActionPerformed
-        // TODO add your handling code here:
-        val modSql = SqlVotante()
-        if (txtIdVotante!!.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debe ingresar un id")
-        } else {
-            mod.setIdentificacion(Integer.parseInt(txtIdVotante!!.getText()))
-            modSql.buscar(mod)
-            txtNombreVotante!!.setText(mod.getNombre())
-            txtApellidoVotante!!.setText(mod.getApellido())
-            txtIdVotante!!.setText(String.valueOf(mod.getIdentificacion()))
-            if (mod.getTipo_id().equals("ci")) {
-                cboTipoId!!.setSelectedItem("cedula")
-            } else if (mod.getTipo_id().equals("ps")) {
-                cboTipoId!!.setSelectedItem("pasaporte")
-            }
-            txtCarreraVotante!!.setText(mod.getCarrera())
-            txtNivelVotante!!.setText(String.valueOf(mod.getNivel()))
-        }
-
-    }//GEN-LAST:event_butBuscarVotanteActionPerformed
-    // End of variables declaration//GEN-END:variables
-
-    @Override
-    fun mouseClicked(e: MouseEvent) {
+    override fun mouseClicked(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mousePressed(e: MouseEvent) {
+    override fun mousePressed(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mouseReleased(e: MouseEvent) {
+    override fun mouseReleased(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mouseEntered(e: MouseEvent) {
+    override fun mouseEntered(e: MouseEvent) {
 
     }
 
-    @Override
-    fun mouseExited(e: MouseEvent) {
+    override fun mouseExited(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 

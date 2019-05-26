@@ -7,7 +7,8 @@ package votoelectronicoproyecto
 
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
-import java.swing.*
+import javax.swing.JFrame
+
 /**
  *
  * @author Hp

@@ -10,14 +10,60 @@ package modelo
  * @author Primario
  */
 open class Estudiante {
-    open var identificacion: Int = 0
-    open var nombre: String? = null
-    open var apellido: String? = null
-    open var tipo_id: String? = null
-    open var carrera: String? = null
-    open var nivel: Int = 0
+    private var identificacion: Int = 0
+    private var nombre: String = ""
+    private var apellido: String = ""
+    private var tipo_id: String = ""
+    private var carrera: String = ""
+    private var nivel: Int = 0
 
-    constructor()
+    open fun getIdentificacion(): Int {
+        return identificacion
+    }
+
+    open fun getNombre(): String? {
+        return nombre
+    }
+
+    open fun getApellido(): String? {
+        return apellido
+    }
+
+    open fun getTipo_id(): String? {
+        return tipo_id
+    }
+
+    open fun getCarrera(): String? {
+        return carrera
+    }
+
+    open fun getNivel(): Int {
+        return nivel
+    }
+
+    open fun setIdentificacion(identificacion: Int) {
+        this.identificacion = identificacion
+    }
+
+    open fun setNombre(nombre: String) {
+        this.nombre = nombre
+    }
+
+    open fun setApellido(apellido: String) {
+        this.apellido = apellido
+    }
+
+    open fun setTipo_id(tipo_id: String) {
+        this.tipo_id = tipo_id
+    }
+
+    open fun setCarrera(carrera: String) {
+        this.carrera = carrera
+    }
+
+    open fun setNivel(nivel: Int) {
+        this.nivel = nivel
+    }
 
 
 }

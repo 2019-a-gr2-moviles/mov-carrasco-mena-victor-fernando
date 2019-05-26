@@ -11,9 +11,6 @@ import java.awt.event.MouseListener
 import java.util.StringTokenizer
 import javax.swing.JOptionPane
 import modelo.Candidato
-import modelo.SqlCandidato
-import modelo.SqlVotos
-import modelo.Votante
 import modelo.Votos
 
 /**
@@ -27,8 +24,6 @@ class JfVotante : javax.swing.JFrame(), MouseListener {
      */
     internal var votos = Votos()
     internal var cand = Candidato()
-
-    internal var candidato = SqlCandidato()
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private var butBlanco: javax.swing.JButton? = null
@@ -48,44 +43,6 @@ class JfVotante : javax.swing.JFrame(), MouseListener {
         initComponents()
         this.setLocationRelativeTo(null)
 
-        labFotoCanA!!.addMouseListener(object : MouseAdapter() {
-            @Override
-            fun mousePressed(e: MouseEvent) {
-                val token = StringTokenizer(labCandidatoA!!.getText())
-                while (token.hasMoreTokens()) {
-                    cand.nombre = token.nextToken()
-                    cand.apellido = token.nextToken()
-                }
-                candidato.buscarPorNombreApellido(cand)
-                System.out.println("id del candidato: " + cand.identificacion)
-            }
-        })
-
-        labFotoCanB!!.addMouseListener(object : MouseAdapter() {
-            @Override
-            fun mousePressed(e: MouseEvent) {
-                val token = StringTokenizer(labCandidatoB!!.getText())
-                while (token.hasMoreTokens()) {
-                    cand.nombre = token.nextToken()
-                    cand.apellido = token.nextToken()
-                }
-                candidato.buscarPorNombreApellido(cand)
-                System.out.println("id del candidato: " + cand.identificacion)
-            }
-        })
-
-        labFotoCanC!!.addMouseListener(object : MouseAdapter() {
-            @Override
-            fun mousePressed(e: MouseEvent) {
-                val token = StringTokenizer(labCandidatoC!!.getText())
-                while (token.hasMoreTokens()) {
-                    cand.nombre = token.nextToken()
-                    cand.apellido = token.nextToken()
-                }
-                candidato.buscarPorNombreApellido(cand)
-                System.out.println("id del candidato: " + cand.identificacion)
-            }
-        })
     }
 
     /**
@@ -131,31 +88,19 @@ class JfVotante : javax.swing.JFrame(), MouseListener {
 
         butVotar!!.setFont(java.awt.Font("Times New Roman", 1, 18)) // NOI18N
         butVotar!!.setText("VOTAR")
-        butVotar!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butVotarActionPerformed(evt)
-            }
-        })
+
         getContentPane().add(butVotar)
         butVotar!!.setBounds(20, 430, 94, 38)
 
         butBlanco!!.setFont(java.awt.Font("Times New Roman", 1, 18)) // NOI18N
         butBlanco!!.setText("EN BLANCO")
-        butBlanco!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butBlancoActionPerformed(evt)
-            }
-        })
+
         getContentPane().add(butBlanco)
         butBlanco!!.setBounds(240, 430, 136, 38)
 
         butSalir!!.setFont(java.awt.Font("Times New Roman", 1, 18)) // NOI18N
         butSalir!!.setText("SALIR")
-        butSalir!!.addActionListener(object : java.awt.event.ActionListener() {
-            fun actionPerformed(evt: java.awt.event.ActionEvent) {
-                butSalirActionPerformed(evt)
-            }
-        })
+
         getContentPane().add(butSalir)
         butSalir!!.setBounds(480, 430, 85, 38)
 
@@ -165,17 +110,6 @@ class JfVotante : javax.swing.JFrame(), MouseListener {
         labCandidatoA!!.setText("Veronica Zambrano")
         jPanel1!!.add(labCandidatoA, org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1))
 
-        labFotoCanA!!.setIcon(javax.swing.ImageIcon(getClass().getResource("/Logos/foto-carnet-chica.png"))) // NOI18N
-        jPanel1!!.add(labFotoCanA, org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 135, 180))
-
-        labFotoCanB!!.setIcon(javax.swing.ImageIcon(getClass().getResource("/Logos/foto-canet.png"))) // NOI18N
-        jPanel1!!.add(labFotoCanB, org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 135, 180))
-
-        labFotoCanC!!.setIcon(javax.swing.ImageIcon(getClass().getResource("/Logos/foto-carnet-chica3.png"))) // NOI18N
-        jPanel1!!.add(labFotoCanC, org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 130, 180))
-
-        labFondoSistema!!.setIcon(javax.swing.ImageIcon(getClass().getResource("/Logos/FondoSistema.jpg"))) // NOI18N
-        jPanel1!!.add(labFondoSistema, org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 500))
 
         getContentPane().add(jPanel1)
         jPanel1!!.setBounds(0, 0, 650, 500)
@@ -183,62 +117,29 @@ class JfVotante : javax.swing.JFrame(), MouseListener {
         pack()
     }// </editor-fold>//GEN-END:initComponents
 
-    private fun butSalirActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butSalirActionPerformed
-        // TODO add your handling code here:
-        System.exit(0)
-    }//GEN-LAST:event_butSalirActionPerformed
 
-    private fun butVotarActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butVotarActionPerformed
-        // TODO add your handling code here:
-        val voto = SqlVotos()
-        votos.idCandidato = cand.identificacion
-        votos.voto = '1'
-        votos.blanco = '0'
-        voto.registrar(votos)
-        JOptionPane.showMessageDialog(null, "Usted a votado por: " + cand.nombre + " " + cand.apellido)
-        System.exit(0)
-    }//GEN-LAST:event_butVotarActionPerformed
 
-    private fun butBlancoActionPerformed(evt: java.awt.event.ActionEvent) {//GEN-FIRST:event_butBlancoActionPerformed
-        // TODO add your handling code here:
-        val voto = SqlVotos()
-        val numero: Int
-        //numero = (int) (Math.random() * 100000) + 1;
-        numero = cand.identificacion
-        //if(numero<200000){
-        votos.idCandidato = 1002552312
-        votos.voto = '0'
-        votos.blanco = '1'
-        voto.registrar(votos)
-        JOptionPane.showMessageDialog(null, "usted a dejado su voto en blanco")
-        System.exit(0)
-        //}
 
-    }//GEN-LAST:event_butBlancoActionPerformed
-    // End of variables declaration//GEN-END:variables
-
-    @Override
-    fun mouseClicked(e: MouseEvent) {
+    override fun mouseClicked(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mousePressed(e: MouseEvent) {
+
+    override fun mousePressed(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mouseReleased(e: MouseEvent) {
+
+    override fun mouseReleased(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mouseEntered(e: MouseEvent) {
+
+    override fun mouseEntered(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    fun mouseExited(e: MouseEvent) {
+    override fun mouseExited(e: MouseEvent) {
         throw UnsupportedOperationException("Not supported yet.") //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -273,11 +174,7 @@ class JfVotante : javax.swing.JFrame(), MouseListener {
             //</editor-fold>
 
             /* Create and display the form */
-            java.awt.EventQueue.invokeLater(object : Runnable() {
-                fun run() {
-                    JfVotante().setVisible(true)
-                }
-            })
+            java.awt.EventQueue.invokeLater { JfVotante().setVisible(true) }
         }
     }
 }
