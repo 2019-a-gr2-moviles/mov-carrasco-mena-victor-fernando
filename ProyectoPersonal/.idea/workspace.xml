@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6db48a09-7a72-40cb-9d22-78d0b2766e05" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/.idea/dictionaries/Primario.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/VotoElectrónico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/modelo/Candidato.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/modelo/Candidato.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/modelo/Conexion.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/modelo/Estudiante.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/modelo/Estudiante.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/modelo/Votante.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/JfAdministrador.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/JfAdministrador.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/JfMenuPrincipal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/JfMenuPrincipal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/JfVotante.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/JfVotante.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/PanelRegistroCandidato.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/PanelRegistroCandidato.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/PanelRegistroVotantes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/PanelRegistroVotantes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/PanelTResultados.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/PanelTResultados.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../03-trabajo-kotlin/VotoElectronicoProyecto/src/votoelectronicoproyecto/VotoElectronicoProyecto.kt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelo/Estudiante.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +12,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modelo/Estudiante.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/modelo/Estudiante.kt" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1659" />
@@ -63,6 +77,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558891887911" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -91,15 +106,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558890772878</updated>
-      <workItem from="1558890777046" duration="327000" />
+      <workItem from="1558890777046" duration="1894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327000" />
+    <option name="totallyTimeSpent" value="1894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -133,6 +149,15 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/modelo/Estudiante.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
