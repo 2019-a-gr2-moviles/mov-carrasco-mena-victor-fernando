@@ -1,5 +1,5 @@
 package modelo
 
-class Estudiante {
-    
+open class Estudiante {
+
 }
