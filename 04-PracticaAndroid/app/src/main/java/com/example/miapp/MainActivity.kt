@@ -15,6 +15,12 @@ class MainActivity : AppCompatActivity() {
         btn_parcelable.setOnClickListener{
             irAParcelable()
         }
+        btn_toast.setOnClickListener {
+            irAToast()
+        }
+        btn_adapter.setOnClickListener {
+            irAListView()
+        }
     }
 
     fun irAParcelable(){
@@ -31,6 +37,22 @@ class MainActivity : AppCompatActivity() {
         val cachetes = Mascota("Adrian",adrian)
         intentExplicito.putExtra("mascota",cachetes)
 
+        startActivity(intentExplicito)
+    }
+
+    fun irAToast(){
+        val intentExplicito = Intent(
+            this,
+            Main2Activity::class.java
+        )
+        startActivity(intentExplicito)
+    }
+
+    fun irAListView(){
+        val intentExplicito = Intent(
+            this,
+            ListViewActivity::class.java
+        )
         startActivity(intentExplicito)
     }
 }
