@@ -20,4 +20,5 @@
     <string name="update">Actualizar</string>
     <string name="manageProducts">Gestionar Productos</string>
     <string name="createProduct">Crear producto</string>
+    <string name="products">Productos</string>
 </resources>
