@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ExamenIB</string>
+    <string name="nombre">Nombre</string>
+    <string name="enter">Entrar</string>
+    <string name="manageTend">Gestionar Tienda</string>
+    <string name="createTend">Crear Tienda</string>
+    <string name="nombres">Nombres</string>
+    <string name="address">Dirección</string>
+    <string name="openningDay">Fecha de Apertura</string>
+    <string name="ruc">RUC</string>
+    <string name="matriz">Matriz</string>
+    <string name="save">GUARDAR</string>
 </resources>
