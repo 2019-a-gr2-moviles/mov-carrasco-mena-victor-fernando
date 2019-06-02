@@ -11,4 +11,13 @@
     <string name="matriz">Matriz</string>
     <string name="save">GUARDAR</string>
     <string name="tends">Tiendas</string>
+    <string name="productNumber">Numero de Producto</string>
+    <string name="description">Descripción</string>
+    <string name="price">Precio</string>
+    <string name="launchDate">Fecha de lanzamiento</string>
+    <string name="guarantyYears">Años de Garantía</string>
+    <string name="delete">Eliminar</string>
+    <string name="update">Actualizar</string>
+    <string name="manageProducts">Gestionar Productos</string>
+    <string name="createProduct">Crear producto</string>
 </resources>
