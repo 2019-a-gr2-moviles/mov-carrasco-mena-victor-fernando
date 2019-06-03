@@ -5,7 +5,7 @@ import android.os.Parcelable
 import java.util.*
 
 class Tienda (
-            var nombres:String,
+            var nombre:String,
             var direccion:String,
             var fechaApertura:Date,
             var ruc:Int,
@@ -20,7 +20,7 @@ class Tienda (
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(nombres)
+        parcel.writeString(nombre)
         parcel.writeString(direccion)
         parcel.writeSerializable(fechaApertura)
         parcel.writeInt(ruc)

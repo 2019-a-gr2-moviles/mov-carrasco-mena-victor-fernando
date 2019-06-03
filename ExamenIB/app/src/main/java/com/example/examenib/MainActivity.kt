@@ -26,7 +26,10 @@ class MainActivity : AppCompatActivity() {
             PrincipalButtons::class.java
         )
         val fernando = Usuario("Fernando Carrasco")
-        intentExplicito.putExtra("usuario",fernando)
+        intentExplicito.putExtra(
+            "usuario",
+            fernando)
+
         if(fernando.nombre == txt_name.text.toString()){
             startActivity(intentExplicito)
         }else{

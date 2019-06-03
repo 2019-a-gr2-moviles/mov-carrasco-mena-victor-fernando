@@ -3,6 +3,7 @@ package com.example.examenib
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_create_tend.*
 import kotlinx.android.synthetic.main.activity_create_tend.txt_address
 import kotlinx.android.synthetic.main.activity_create_tend.txt_nombre
@@ -46,6 +47,9 @@ class CreateTend : AppCompatActivity() {
         val tienda = Tienda(nombre,direccion,fechaApertura,ruc,matriz)
 
         intentExplicito.putExtra("tienda",tienda)
+        startActivity(intentExplicito)
+
+        Log.i("guardar","se guardo el nombre: ${tienda.nombre}")
 
 
     }
