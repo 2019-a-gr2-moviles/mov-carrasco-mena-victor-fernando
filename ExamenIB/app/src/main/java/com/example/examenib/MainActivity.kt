@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val name = "Fernando"
 
         btn_enter.setOnClickListener{
             irABotonesPrincipales()
@@ -33,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         }else{
         Log.i("error","nombre incorrecto")
         }
+
 
     }
 }
