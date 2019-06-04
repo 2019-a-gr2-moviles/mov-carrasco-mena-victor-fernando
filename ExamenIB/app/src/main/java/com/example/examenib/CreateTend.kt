@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_create_tend.*
 import kotlinx.android.synthetic.main.activity_create_tend.txt_address
-import kotlinx.android.synthetic.main.activity_create_tend.txt_nombre
-import kotlinx.android.synthetic.main.activity_manage_tend.*
 import java.util.*
-import java.util.regex.Pattern
 
 class CreateTend : AppCompatActivity() {
 
@@ -28,7 +25,7 @@ class CreateTend : AppCompatActivity() {
             ListOfTends::class.java
         )
 
-        val nombre = txt_nombre.text.toString()
+        val nombre = `@+id/txt_numero_producto`.text.toString()
         var direccion = txt_address.text.toString()
         /*var patron = Pattern.compile("^(19|20)\\d{2}[\\/](0?[1-9]|1[0-2])[\\/](0?[1-9]|[12]\\d|3[01])$")
         var fecha = txt_openning_date.text.toString().
