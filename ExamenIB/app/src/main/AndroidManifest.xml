@@ -9,17 +9,17 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ListOfProducts">
+        <activity android:name=".ListOfProductsActivity">
         </activity>
-        <activity android:name=".ManageProduct">
+        <activity android:name=".ManageProductActivity">
         </activity>
-        <activity android:name=".ManageTend">
+        <activity android:name=".ManageTendActivity">
         </activity>
-        <activity android:name=".CreateProduct">
+        <activity android:name=".CreateProductActivity">
         </activity>
-        <activity android:name=".ListOfTends">
+        <activity android:name=".ListOfTendsActivity">
         </activity>
-        <activity android:name=".CreateTend">
+        <activity android:name=".CreateTendActivity">
         </activity>
         <activity android:name=".PrincipalButtons">
         </activity>

@@ -23,7 +23,7 @@ class PrincipalButtons : AppCompatActivity() {
     fun irATiendas(){
         val intentExplicito = Intent(
             this,
-            ListOfTends::class.java
+            ListOfTendsActivity::class.java
         )
 
         startActivity(intentExplicito)
@@ -32,7 +32,7 @@ class PrincipalButtons : AppCompatActivity() {
     fun irACrearTienda(){
         val intentExplicito = Intent(
             this,
-            CreateTend::class.java
+            CreateTendActivity::class.java
         )
 
         startActivity(intentExplicito)
