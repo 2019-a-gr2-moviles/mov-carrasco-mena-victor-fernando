@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ManageProduct">
+        tools:context=".ManageProductActivity">
 
     <Button
             android:text="@string/delete"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txt_numero_producto"
+            android:id="@+id/txt_nombre"
             app:layout_constraintStart_toStartOf="@+id/txt-product-number" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="@+id/txt-product-number" android:layout_marginTop="140dp"
             app:layout_constraintTop_toTopOf="parent" android:hint="@string/nombre"
@@ -44,7 +44,7 @@
             android:ems="10"
             android:id="@+id/txt-product-number" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/txt_numero_producto" android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_nombre" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:hint="@string/productNumber"
             app:layout_constraintVertical_bias="0.652"/>
@@ -54,8 +54,8 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/txt-description"
-            app:layout_constraintStart_toStartOf="@+id/txt_numero_producto"
-            app:layout_constraintEnd_toEndOf="@+id/txt_numero_producto" android:layout_marginTop="228dp"
+            app:layout_constraintStart_toStartOf="@+id/txt_nombre"
+            app:layout_constraintEnd_toEndOf="@+id/txt_nombre" android:layout_marginTop="228dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.0"
             android:hint="@string/description" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/txt-price" app:layout_constraintVertical_bias="0.191"/>

@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_create_tend.*
 import kotlinx.android.synthetic.main.activity_create_tend.txt_address
 import java.util.*
 
-class CreateTend : AppCompatActivity() {
+class CreateTendActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,12 +20,7 @@ class CreateTend : AppCompatActivity() {
     }
 
     fun guardarTienda(){
-        val intentExplicito = Intent(
-            this,
-            ListOfTends::class.java
-        )
-
-        val nombre = `@+id/txt_numero_producto`.text.toString()
+        val nombre = txt_nombre.text.toString()
         var direccion = txt_address.text.toString()
         /*var patron = Pattern.compile("^(19|20)\\d{2}[\\/](0?[1-9]|1[0-2])[\\/](0?[1-9]|[12]\\d|3[01])$")
         var fecha = txt_openning_date.text.toString().
@@ -43,7 +38,11 @@ class CreateTend : AppCompatActivity() {
 
         val tienda = Tienda(nombre,direccion,fechaApertura,ruc,matriz)
 
-        intentExplicito.putExtra("tienda",tienda)
+        ListaDeTiendas.agregarTienda(tienda)
+        val intentExplicito = Intent(
+            this,
+            ListOfTendsActivity::class.java
+        )
         startActivity(intentExplicito)
 
         Log.i("guardar","se guardo el nombre: ${tienda.nombre}")
