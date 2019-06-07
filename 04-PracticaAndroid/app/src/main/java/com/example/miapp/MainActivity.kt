@@ -15,12 +15,15 @@ class MainActivity : AppCompatActivity() {
         btn_parcelable.setOnClickListener{
             irAParcelable()
         }
+
+
         btn_toast.setOnClickListener {
             irAToast()
         }
         btn_adapter.setOnClickListener {
             irAListView()
         }
+
     }
 
     fun irAParcelable(){
@@ -39,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         startActivity(intentExplicito)
     }
+
 
     fun irAToast(){
         val intentExplicito = Intent(
