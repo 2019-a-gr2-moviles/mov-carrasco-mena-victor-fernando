@@ -16,9 +16,14 @@ class MainActivity : AppCompatActivity() {
             irAParcelable()
         }
 
-        btn_reciclerView.setOnClickListener(
-            irActividad();
-        )
+
+        btn_toast.setOnClickListener {
+            irAToast()
+        }
+        btn_adapter.setOnClickListener {
+            irAListView()
+        }
+
     }
 
     fun irAParcelable(){
@@ -37,8 +42,21 @@ class MainActivity : AppCompatActivity() {
 
         startActivity(intentExplicito)
     }
-    fun irActividad(){
-        val intent = Intent(this,RecyclerViewActivity::class.java);
-        
+
+
+    fun irAToast(){
+        val intentExplicito = Intent(
+            this,
+            Main2Activity::class.java
+        )
+        startActivity(intentExplicito)
+    }
+
+    fun irAListView(){
+        val intentExplicito = Intent(
+            this,
+            ListViewActivity::class.java
+        )
+        startActivity(intentExplicito)
     }
 }
