@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         btn_parcelable.setOnClickListener{
             irAParcelable()
         }
+
+        btn_reciclerView.setOnClickListener(
+            irActividad();
+        )
     }
 
     fun irAParcelable(){
@@ -32,5 +36,9 @@ class MainActivity : AppCompatActivity() {
         intentExplicito.putExtra("mascota",cachetes)
 
         startActivity(intentExplicito)
+    }
+    fun irActividad(){
+        val intent = Intent(this,RecyclerViewActivity::class.java);
+        
     }
 }
