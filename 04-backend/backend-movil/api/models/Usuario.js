@@ -15,8 +15,9 @@ module.exports = {
 	nombre:{
 		type:'string',
 		required: true,
-		unique:true
-	}
+		unique:true,
+		minLength:3
+	},
 	username:{
 		type:'string',
 		required: true,
@@ -35,13 +36,49 @@ module.exports = {
 		type:'boolean',
 		defaultsTo:false
 	},
-	latitudCasa{
+	latitudCasa:{
 		type:'string'
 	},
-	longitudCasa{
+	longitudCasa:{
 		type:'string'
+	},
+	tipoUsuario:{
+		type:'string',
+		enum:['normal','pendiente']
+	},
+	correo:{
+		type: 'string',
+		isEmail:true
 	}
   },
+  
+  // Estandar restful
+  
+  // CREAR
+  // http://localhost:1337/usuario
+  // METODO HTTP: POST
+  // Body Params: usuario
+
+  // ACTUALIZAR
+  // http://localhost:1337/usuario/:id
+  // Ej: http://localhost:1337/usuario/1
+  // METODO HTTP: PUT
+  // Body Params: usuario
+  
+  // Borrar
+  // http://localhost:1337/usuario/:id
+  // Ej: http://localhost:1337/usuario/1
+  // METODO HTTP: DELETE
+  
+  // BUSCAR POR ID
+  // http://localhost:1337/usuario/:id
+  // Ej: http://localhost:1337/usuario/1
+  // METODO HTTP: GET
+  
+  // Obtener todos (enviar parametros de busqueda)
+  // http://localhost:1337/usuario
+  // METODO HTTP: GET
+  
 
 };
 
