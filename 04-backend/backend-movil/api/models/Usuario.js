@@ -80,5 +80,29 @@ module.exports = {
   // METODO HTTP: GET
   
 
+  // Ejemplos
+  // 1) Buscar al usuario con nombre Victor
+  // http://localhost:1337/usuario?nombre=Victor
+  
+  // 2) Buscar al usuario con nombre Victor y cedula 1722295134
+  // http://localhost:1337/usuario?nombre=Victor&cedula=1722295134
+  
+  // 3) Traer los primeros 5
+  // http://localhost:1337/usuario?limit=5
+  
+  // 4) Traer los primeros 5 despues de los primeros 10
+  // http://localhost:1337/usuario?limit=5&skip=10
+  
+  // 5) Traer los registros ordenados por nombre
+  // http://localhost:1337/usuario?sort=nombre
+  // http://localhost:1337/usuario?sort=nombre DESC
+  // http://localhost:1337/usuario?sort=nombre ASC
+  
+  // 6) Traer los registros que contengan en el nombre la letra a
+  // http://localhost:1337/usuario?where={"nombre":{"contains":"a"}}
+  // http://localhost:1337/usuario?where={"sueldo":{"<=":"3000"}}
+  // http://localhost:1337/usuario?where={"fechaNacimiento":{"<=":"2018-01-01"}}
+  // http://localhost:1337/usuario?where={"correo":{"endsWith":"@gmail.com"}}
+  
 };
 
