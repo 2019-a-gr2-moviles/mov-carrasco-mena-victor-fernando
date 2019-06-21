@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +11,6 @@ import android.widget.TextView
 import com.example.miapp.Persona
 import com.example.miapp.R
 import com.example.miapp.RecyclerViewActivity
-import org.w3c.dom.Text
-import java.text.FieldPosition
 
 class AdaptadorPersona(
     private val listaPersonas: List<Persona>,
@@ -24,7 +23,7 @@ class AdaptadorPersona(
         var accionBoton: Button
 
         init {
-            nombreTextView = view.findViewById(R.id.txt_nombre) as TextView
+            nombreTextView = view.findViewById(R.id.txt_tirulo_rv) as TextView
             cedulaTextView = view.findViewById(R.id.txt_cedula) as TextView
             accionBoton = view.findViewById(R.id.btn_accion) as Button
 
@@ -32,7 +31,21 @@ class AdaptadorPersona(
 
             layout
                 .setOnClickListener{
+                    Log.i("recycler-view", "Layout presionado")
+            }
 
+            accionBoton.setOnClickListener {
+                nombreTextView.text = "ME CAMBIAROOOOON!!"
+
+                contexto.cambiarNombreTextView("WOW!")
+
+                val nuevasPersonas = arrayListOf<Persona>()
+
+                nuevasPersonas.add(Persona("Felipe",""))
+                nuevasPersonas.add(Persona("Rafael", "0192929273"))
+                nuevasPersonas.add(Persona("Nydia", "18293041822"))
+
+                contexto.iniciarRecylerView(nuevasPersonas, contexto, recyclerView)
             }
         }
     }
@@ -60,6 +73,8 @@ class AdaptadorPersona(
 
         return MyViewHolder(itemView)
     }
+
+
 }
 
 
