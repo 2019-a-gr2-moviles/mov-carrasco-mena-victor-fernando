@@ -17,7 +17,9 @@ class AdaptadorPersona(
     private val contexto: RecyclerViewActivity,
     private val recyclerView: RecyclerView
 ):RecyclerView.Adapter<AdaptadorPersona.MyViewHolder>() {
+
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view){
+
         var nombreTextView: TextView
         var cedulaTextView: TextView
         var accionBoton: Button
@@ -27,19 +29,27 @@ class AdaptadorPersona(
             cedulaTextView = view.findViewById(R.id.txt_cedula) as TextView
             accionBoton = view.findViewById(R.id.btn_accion) as Button
 
-            val layout = view.findViewById(R.id.linear_layout_v) as LinearLayout
+            val layout = view.findViewById(R.id.linear_layout) as LinearLayout
 
             layout
-                .setOnClickListener{
+                .setOnClickListener {
+
                     Log.i("recycler-view", "Layout presionado")
-            }
+
+                }
 
             accionBoton.setOnClickListener {
-                nombreTextView.text = "ME CAMBIAROOOOON!!"
+                nombreTextView.text = "ME CAMBIAROOOOOOON!!! "
 
                 contexto.cambiarNombreTextView("WOW!")
 
                 val nuevasPersonas = arrayListOf<Persona>()
+
+                nuevasPersonas.add(Persona("Felipe", "1091231239"))
+                nuevasPersonas.add(Persona("Rafael", "0192929273"))
+                nuevasPersonas.add(Persona("Nydia", "18293041822"))
+
+                contexto.iniciarRecylerView(nuevasPersonas, contexto, recyclerView)
 
                 nuevasPersonas.add(Persona("Felipe",""))
                 nuevasPersonas.add(Persona("Rafael", "0192929273"))

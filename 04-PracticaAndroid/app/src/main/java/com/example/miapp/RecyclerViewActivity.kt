@@ -16,37 +16,34 @@ class RecyclerViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_recycler_view)
 
         val lista =    arrayListOf<Persona>();
-        // val recycler_view = rv_Persona;
-        // val actividad = this;
+        //val recycler_view = rv_Persona;
+        //val actividad = this;
+
+        lista.add(Persona("Fernando","171871553"))
+        lista.add(Persona("Fernando1","171871554"))
+        lista.add(Persona("Fernando2","171871553"))
+
+        iniciarRecylerView(lista, this, rv_Persona)
+
+    }
+
+    fun iniciarRecylerView(
+        lista: List<Persona>,
+        actividad: RecyclerViewActivity,
+        recycler_view: RecyclerView
+    ) {
+        val adaptadorPersona = AdaptadorPersona(
+            lista,
+            actividad,
+            recycler_view
+        )
+        recycler_view.adapter = adaptadorPersona
+        recycler_view.itemAnimator = DefaultItemAnimator()
+        recycler_view.layoutManager = LinearLayoutManager(actividad)
 
 
-            lista.add(Persona("Fernando","171871553"))
-            lista.add(Persona("Fernando1","171871554"))
-            lista.add(Persona("Fernando2","171871553"))
-
-            iniciarRecylerView(lista, this, rv_Persona)
-        }
-
-
-        fun iniciarRecylerView(
-            lista: List<Persona>,
-            actividad: RecyclerViewActivity,
-            recycler_view: RecyclerView
-        ) {
-            val adaptadorPersona = AdaptadorPersona(
-                lista,
-                actividad,
-                recycler_view
-            )
-            recycler_view.adapter = adaptadorPersona
-            recycler_view.itemAnimator = DefaultItemAnimator()
-            recycler_view.layoutManager = LinearLayoutManager(actividad)
-
-            adaptadorPersona.notifyDataSetChanged()
-        }
-
-        fun cambiarNombreTextView(texto:String){
-            txt_tirulo_rv.text = texto
-        }
+    fun cambiarNombreTextView(texto: String) {
+        txt_titulo_rv.text = texto
+    }
 
 }
