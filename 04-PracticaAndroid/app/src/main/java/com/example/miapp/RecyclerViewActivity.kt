@@ -41,8 +41,6 @@ class RecyclerViewActivity : AppCompatActivity() {
         recycler_view.itemAnimator = DefaultItemAnimator()
         recycler_view.layoutManager = LinearLayoutManager(actividad)
 
-        adaptadorPersona.notifyDataSetChanged()
-    }
 
     fun cambiarNombreTextView(texto: String) {
         txt_titulo_rv.text = texto
