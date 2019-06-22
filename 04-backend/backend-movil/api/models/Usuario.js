@@ -49,8 +49,17 @@ module.exports = {
 	correo:{
 		type: 'string',
 		isEmail:true
-	}
   },
+  // CONFIGURACION DEL PAPA
+  serviciosDeUsuario:{//nombre atributo de la relacion
+    collection: 'servicio',//Nombre del modelo a relacionar
+    via:'fkUsuario' // Nombre del atributo FK del otro modelo 
+  },
+  fkEmpresa:{
+    model:'empresa'
+  }
+
+  }
   
   // Estandar restful
   
