@@ -25,7 +25,7 @@ class AdaptadorPersona(
         var accionBoton: Button
 
         init {
-            nombreTextView = view.findViewById(R.id.txt_tirulo_rv) as TextView
+            nombreTextView = view.findViewById(R.id.txt_titulo_rv) as TextView
             cedulaTextView = view.findViewById(R.id.txt_cedula) as TextView
             accionBoton = view.findViewById(R.id.btn_accion) as Button
 

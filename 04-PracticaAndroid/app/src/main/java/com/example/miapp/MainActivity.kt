@@ -23,9 +23,18 @@ class MainActivity : AppCompatActivity() {
         btn_adapter.setOnClickListener {
             irAListView()
         }
+        btn_conexion_http.setOnClickListener{
+            irAHttp()
+        }
 
     }
 
+    fun irAHttp(){
+        val intentExplicito = Intent(
+            this,ConexionHttpActivity::class.java
+        )
+        startActivity(intentExplicito)
+    }
     fun irAParcelable(){
         val intentExplicito = Intent(
             this,
