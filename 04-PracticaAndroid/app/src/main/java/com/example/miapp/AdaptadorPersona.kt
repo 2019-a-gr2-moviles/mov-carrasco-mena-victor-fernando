@@ -25,7 +25,7 @@ class AdaptadorPersona(
         var accionBoton: Button
 
         init {
-            nombreTextView = view.findViewById(R.id.txt_nombre) as TextView
+            nombreTextView = view.findViewById(R.id.txt_tirulo_rv) as TextView
             cedulaTextView = view.findViewById(R.id.txt_cedula) as TextView
             accionBoton = view.findViewById(R.id.btn_accion) as Button
 
@@ -51,6 +51,11 @@ class AdaptadorPersona(
 
                 contexto.iniciarRecylerView(nuevasPersonas, contexto, recyclerView)
 
+                nuevasPersonas.add(Persona("Felipe",""))
+                nuevasPersonas.add(Persona("Rafael", "0192929273"))
+                nuevasPersonas.add(Persona("Nydia", "18293041822"))
+
+                contexto.iniciarRecylerView(nuevasPersonas, contexto, recyclerView)
             }
         }
     }
@@ -78,6 +83,8 @@ class AdaptadorPersona(
 
         return MyViewHolder(itemView)
     }
+
+
 }
 
 
