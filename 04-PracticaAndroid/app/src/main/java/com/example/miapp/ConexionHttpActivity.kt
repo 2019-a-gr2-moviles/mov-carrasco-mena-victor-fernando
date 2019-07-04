@@ -6,8 +6,10 @@ import android.util.Log
 import com.beust.klaxon.Klaxon
 import java.lang.Exception
 import java.util.*
-import com.github.kittinunf.result.Result.*
+import com.github.kittinunf.result.Result.Failure
+import com.github.kittinunf.result.Result.Success
 import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.fuel.httpPost
 
 class ConexionHttpActivity : AppCompatActivity() {
 
@@ -34,35 +36,48 @@ class ConexionHttpActivity : AppCompatActivity() {
                 }
             ]
         """.trimIndent()
+
         try {
             val empresaInstancia = Klaxon()
                 .parseArray<Empresa>(json)
 
             empresaInstancia?.forEach {
 
-                Log.i("http",
-                    "Nombre ${it.nombre}")
+                Log.i(
+                    "http",
+                    "Nombre ${it.nombre}"
+                )
 
-                Log.i("http",
-                    "Id ${it.id}")
+                Log.i(
+                    "http",
+                    "Id ${it.id}"
+                )
 
-                Log.i("http",
-                    "Fecha ${it.fechaCreacion}")
+                Log.i(
+                    "http",
+                    "Fecha ${it.fechaCreacion}"
+                )
 
                 it.usuariosDeEmpresa.forEach {
-                    Log.i("http",
-                        "Nombre ${it.nombre}")
-                    Log.i("http",
-                        "FK ${it.fkEmpresa}")
+                    Log.i(
+                        "http",
+                        "Nombre ${it.nombre}"
+                    )
+                    Log.i(
+                        "http",
+                        "FK ${it.fkEmpresa}"
+                    )
                 }
 
             }
-        }catch (e:Exception){
-            Log.i("http",
-                "Instanciando la empresa")
+        } catch (e: Exception) {
+            Log.i(
+                "http",
+                "Instanciando la empresa"
+            )
         }
 
-        val url = "http://172.31.104.104:1337"
+        val url = "http://172.31.104.92:1337/empresa/1"
 
         url
             .httpGet()
@@ -70,14 +85,34 @@ class ConexionHttpActivity : AppCompatActivity() {
                 when (result) {
                     is Failure -> {
                         val ex = result.getException()
-                        Log.i("http","Error: ${ex.message}")
+                        Log.i("http", "Error: ${ex.message}")
                     }
                     is Success -> {
                         val data = result.get()
-                        Log.i("http","Data: ${data}")
+                        Log.i("http", "Data: ${data}")
                     }
                 }
+            }
+
+        val urlCrearEmpresa = "http://171.31.104.102:1337/empresa"
+
+        val parametrosCrearEmpresa = listOf<>(
+            "nombre" to "Manticore labs 2",
+            "apellido" to "Carrasco",
+            "sueldo" to 12.20,
+            "casado" to false,
+            "hijos" to null
+
+        )
+        urlCrearEmpresa
+            .httpPost(parametrosCrearEmpresa)
+            .responseString{ request, response, result ->
+                when(result){
+                    is Failure -> {
+                        val error = result.getExce+
+                                            }
+                }
+            }
+
     }
-
-
 }
