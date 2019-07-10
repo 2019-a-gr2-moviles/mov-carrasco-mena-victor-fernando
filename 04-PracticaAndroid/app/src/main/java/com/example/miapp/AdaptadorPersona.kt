@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.miapp
 
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -8,15 +8,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.example.miapp.Persona
-import com.example.miapp.R
-import com.example.miapp.RecyclerViewActivity
+import androidx.recyclerview.widget.RecyclerView
 
 class AdaptadorPersona(
     private val listaPersonas: List<Persona>,
     private val contexto: RecyclerViewActivity,
-    private val recyclerView: RecyclerView
-):RecyclerView.Adapter<AdaptadorPersona.MyViewHolder>() {
+    private val recyclerView: androidx.recyclerview.widget.RecyclerView
+):androidx.recyclerview.widget.RecyclerView.Adapter<AdaptadorPersona.MyViewHolder>() {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
@@ -25,7 +23,7 @@ class AdaptadorPersona(
         var accionBoton: Button
 
         init {
-            nombreTextView = view.findViewById(R.id.txt_titulo_rv) as TextView
+            nombreTextView = view.findViewById(R.id.txt_nombre) as TextView
             cedulaTextView = view.findViewById(R.id.txt_cedula) as TextView
             accionBoton = view.findViewById(R.id.btn_accion) as Button
 

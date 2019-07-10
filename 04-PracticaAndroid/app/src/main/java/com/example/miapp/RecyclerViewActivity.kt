@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import com.example.myapplication.AdaptadorPersona
+import com.example.miapp.AdaptadorPersona
 import kotlinx.android.synthetic.main.activity_parcelable.*
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
@@ -30,7 +30,7 @@ class RecyclerViewActivity : AppCompatActivity() {
     fun iniciarRecylerView(
         lista: List<Persona>,
         actividad: RecyclerViewActivity,
-        recycler_view: RecyclerView
+        recycler_view: androidx.recyclerview.widget.RecyclerView
     ) {
         val adaptadorPersona = AdaptadorPersona(
             lista,
@@ -43,7 +43,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
 
     fun cambiarNombreTextView(texto: String) {
-        txt_titulo_rv.text = texto
+        txv_titulo_rv.text = texto
     }
 
 }

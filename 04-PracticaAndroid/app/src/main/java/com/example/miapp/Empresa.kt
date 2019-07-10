@@ -6,7 +6,8 @@ class Empresa (
     var id:Int,
     var nombre:String,
     var createdAt:Long,
-    var updatedAt: Long
+    var updatedAt: Long,
+    var usuariosDeEmpresa: ArrayList<UsuarioEmpresa>
 ){
     var fechaCreacion: Date
     var fechaActualizacion: Date

@@ -40,26 +40,38 @@ class ConexionHttpActivity : AppCompatActivity() {
 
             empresaInstancia?.forEach {
 
-                Log.i("http",
-                    "Nombre ${it.nombre}")
+                Log.i(
+                    "http",
+                    "Nombre ${it.nombre}"
+                )
 
-                Log.i("http",
-                    "Id ${it.id}")
+                Log.i(
+                    "http",
+                    "Id ${it.id}"
+                )
 
-                Log.i("http",
-                    "Fecha ${it.fechaCreacion}")
+                Log.i(
+                    "http",
+                    "Fecha ${it.fechaCreacion}"
+                )
 
                 it.usuariosDeEmpresa.forEach {
-                    Log.i("http",
-                        "Nombre ${it.nombre}")
-                    Log.i("http",
-                        "FK ${it.fkEmpresa}")
+                    Log.i(
+                        "http",
+                        "Nombre ${it.nombre}"
+                    )
+                    Log.i(
+                        "http",
+                        "FK ${it.fkEmpresa}"
+                    )
                 }
 
             }
-        }catch (e:Exception){
-            Log.i("http",
-                "Instanciando la empresa")
+        } catch (e: Exception) {
+            Log.i(
+                "http",
+                "Instanciando la empresa"
+            )
         }
 
         val url = "http://172.31.104.104:1337"
@@ -70,14 +82,14 @@ class ConexionHttpActivity : AppCompatActivity() {
                 when (result) {
                     is Failure -> {
                         val ex = result.getException()
-                        Log.i("http","Error: ${ex.message}")
+                        Log.i("http", "Error: ${ex.message}")
                     }
                     is Success -> {
                         val data = result.get()
-                        Log.i("http","Data: ${data}")
+                        Log.i("http", "Data: ${data}")
                     }
                 }
+            }
+
     }
-
-
 }
