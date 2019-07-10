@@ -6,8 +6,10 @@ import android.util.Log
 import com.beust.klaxon.Klaxon
 import java.lang.Exception
 import java.util.*
-import com.github.kittinunf.result.Result.*
+import com.github.kittinunf.result.Result.Failure
+import com.github.kittinunf.result.Result.Success
 import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.fuel.httpPost
 
 class ConexionHttpActivity : AppCompatActivity() {
 
@@ -34,6 +36,7 @@ class ConexionHttpActivity : AppCompatActivity() {
                 }
             ]
         """.trimIndent()
+
         try {
             val empresaInstancia = Klaxon()
                 .parseArray<Empresa>(json)
@@ -74,7 +77,7 @@ class ConexionHttpActivity : AppCompatActivity() {
             )
         }
 
-        val url = "http://172.31.104.104:1337"
+        val url = "http://172.31.104.92:1337/empresa/1"
 
         url
             .httpGet()
@@ -90,6 +93,5 @@ class ConexionHttpActivity : AppCompatActivity() {
                     }
                 }
             }
-
     }
 }
