@@ -1,15 +1,14 @@
 package com.example.miapp
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import com.example.myapplication.AdaptadorPersona
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_parcelable.*
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
-class RecyclerViewActivity : AppCompatActivity() {
+class ReciclerViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,16 +19,16 @@ class RecyclerViewActivity : AppCompatActivity() {
         //val actividad = this;
 
         lista.add(Persona("Fernando","171871553"))
-        lista.add(Persona("Fernando1","171871554"))
-        lista.add(Persona("Fernando2","171871553"))
+        lista.add(Persona("Victor","171871554"))
+        lista.add(Persona("Vanessa","171871553"))
 
-        iniciarRecylerView(lista, this, rv_Persona)
+        iniciarRecylerView(lista, this, rv_personas)
 
     }
 
     fun iniciarRecylerView(
         lista: List<Persona>,
-        actividad: RecyclerViewActivity,
+        actividad: ReciclerViewActivity,
         recycler_view: RecyclerView
     ) {
         val adaptadorPersona = AdaptadorPersona(
@@ -42,8 +41,9 @@ class RecyclerViewActivity : AppCompatActivity() {
         recycler_view.layoutManager = LinearLayoutManager(actividad)
 
 
-    fun cambiarNombreTextView(texto: String) {
-        txt_titulo_rv.text = texto
+        
     }
-
+    fun cambiarNombreTextView(texto: String) {
+        txv_titulo_rv.text = texto
+    }
 }
