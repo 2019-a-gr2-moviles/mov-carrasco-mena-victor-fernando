@@ -11,12 +11,12 @@ import com.github.kittinunf.result.Result.Success
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.fuel.httpPost
 
+
 class ConexionHttpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conexion_http)
-
         val json = """
             [
                 {
@@ -71,13 +71,15 @@ class ConexionHttpActivity : AppCompatActivity() {
 
             }
         } catch (e: Exception) {
+            Log.i("http", "${e.message}")
             Log.i(
                 "http",
-                "Instanciando la empresa"
+                "Error instanciando la empresa"
             )
         }
 
-        val url = "http://172.31.104.92:1337/empresa/1"
+        // node app.js
+        val url = "http://172.31.104.102:1337/empresa/1"
 
         url
             .httpGet()
@@ -90,29 +92,43 @@ class ConexionHttpActivity : AppCompatActivity() {
                     is Success -> {
                         val data = result.get()
                         Log.i("http", "Data: ${data}")
+
+                        val empresaParseada = Klaxon()
+                            .parse<Empresa>(data)
+                        if (empresaParseada != null) {
+                            Log.i("http", " iiiiiiiiiiiiiiiiiiii ")
+                            Log.i("http", "${empresaParseada.nombre} ")
+                            Log.i("http", "${empresaParseada.id} ")
+                        }
                     }
                 }
             }
 
-        val urlCrearEmpresa = "http://171.31.104.102:1337/empresa"
+        val urlCrearEmpresa = "http://172.31.104.102:1337/empresa"
 
-        val parametrosCrearEmpresa = listOf<>(
-            "nombre" to "Manticore labs 2",
-            "apellido" to "Carrasco",
-            "sueldo" to 12.20,
-            "casado" to false,
-            "hijos" to null
-
+        val parametrosCrearEmpresa = listOf(
+            "nombre" to "Manticore Labs 2", // Este sirve
+            "apellido" to "Eguez", // Colados
+            "sueldo" to 12.20, // Colados
+            "casado" to false, // Colados
+            "hijos" to null // Colados
         )
+        // Parametros = List<Pair<String, Any?>>
         urlCrearEmpresa
             .httpPost(parametrosCrearEmpresa)
-            .responseString{ request, response, result ->
+            .responseString { request, response, result ->
                 when(result){
                     is Failure -> {
-                        val error = result.getExce+
-                                            }
+                        val error = result.getException()
+                        Log.i("http","Error: ${error}")
+                    }
+                    is Success -> {
+                        val empresaString = result.get()
+                        Log.i("http","$empresaString")
+                    }
                 }
             }
+
 
     }
 }

@@ -2,12 +2,13 @@ package com.example.miapp
 
 import java.util.*
 
-class Empresa (
-    var id:Int,
-    var nombre:String,
-    var createdAt:Long,
-    var updatedAt: Long
-){
+class Empresa(
+    var id: Int,
+    var nombre: String,
+    var createdAt: Long,
+    var updatedAt: Long,
+    var usuariosDeEmpresa: ArrayList<UsuarioEmpresa>
+) {
     var fechaCreacion: Date
     var fechaActualizacion: Date
 
