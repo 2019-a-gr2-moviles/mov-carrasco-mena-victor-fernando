@@ -1,9 +1,9 @@
 package com.example.miapp
 
 import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
@@ -11,10 +11,22 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(),
+    OnMapReadyCallback,
+    GoogleMap.OnCameraMoveStartedListener,
+    GoogleMap.OnCameraMoveListener,
+    GoogleMap.OnCameraIdleListener,
+    GoogleMap.OnPolylineClickListener,
+    GoogleMap.OnPolygonClickListener{
+    override fun onPolygonClick(p0: Polygon?) {
+
+    }
+
+    override fun onPolylineClick(p0: Polyline?) {
+        Log.i("map","Polilinea \${p0.toString()")
+    }
 
     private lateinit var mMap: GoogleMap
     private var tienePermisosLocalizacion = false
@@ -42,14 +54,52 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
         establecerConfiguracionMapa(mMap)
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        establecerListenersMovimientoMapa(mMap)
+        val foch = LatLng(-34.0, 151.0)
+        val titulo = "Plaza Foch"
+        anadirMarcador(foch,titulo)
+        moverCamaraConZoom(foch)
+
+        val poliLineaUno = googleMap
+            .addPolyline(
+                PolylineOptions()
+                    .clickable(true)
+                    .add(
+                        LatLng(-0.210462, -78.493948),
+                        LatLng(-0.208218, -78.490163),
+                        LatLng(-0.208583, -78.488940),
+                        LatLng(-0.209377, -78.490303)
+                    )
+            )
+
+        val poligonoUno = googleMap
+            .addPolygon(
+                PolygonOptions()
+                    .clickable(true)
+                    .add(
+                        LatLng(-0.209431, -78.490078),
+                        LatLng(-0.208734, -78.488951),
+                        LatLng(-0.209431, -78.488286),
+                        LatLng(-0.210085, -78.489745)
+                    )
+            )
+
+        poligonoUno.fillColor = -0xc771c4
     }
 
     fun establecerConfiguracionMapa(mapa:GoogleMap){
+        val contexto = this.applicationContext
+
         with(mapa){
-            mapa.isMyLocationEnabled = true
+            val permisoFineLocation = ContextCompat
+                .checkSelfPermission(
+                    contexto,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            val tienePermiso = permisoFineLocation == PackageManager.PERMISSION_GRANTED
+            if(tienePermiso){
+                mapa.isMyLocationEnabled = true
+            }
             this.uiSettings.isZoomControlsEnabled = true
             uiSettings.isMyLocationButtonEnabled = true
         }
@@ -76,5 +126,41 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             )
         }
 
+    }
+
+    fun establecerListenersMovimientoMapa(map:GoogleMap){
+        with(map){
+            setOnCameraIdleListener ( this@MapsActivity )
+            setOnCameraMoveStartedListener ( this@MapsActivity )
+            setOnCameraMoveListener ( this@MapsActivity )
+            setOnPolygonClickListener ( this@MapsActivity )
+            setOnPolylineClickListener  (this@MapsActivity)
+        }
+    }
+    fun anadirMarcador(latLng:LatLng,title:String){
+        mMap.addMarker(
+            MarkerOptions()
+                .position(latLng)
+                .title(title)
+        )
+    }
+
+    fun moverCamaraConZoom(latLng: LatLng,zoom:Float=10f){
+        mMap.moveCamera(
+            CameraUpdateFactory
+                .newLatLngZoom(latLng,zoom)
+        )
+    }
+
+    override fun onCameraIdle() {
+        Log.i("map","me quede quieto");
+    }
+
+    override fun onCameraMove() {
+        Log.i("map","me estoy moviendo");
+    }
+
+    override fun onCameraMoveStarted(p0: Int) {
+        Log.i("map","me voy a empezar a mover");
     }
 }
