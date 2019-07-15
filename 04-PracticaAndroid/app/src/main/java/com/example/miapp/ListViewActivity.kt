@@ -1,12 +1,11 @@
 package com.example.miapp
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_list_view.*
 
 class ListViewActivity : AppCompatActivity() {
@@ -31,20 +30,9 @@ class ListViewActivity : AppCompatActivity() {
         lv_ejemplo.onItemClickListener = AdapterView.OnItemClickListener {
                 parent, view, position, id ->
             Log.i("list-view","Posicion $position")
-            Snackbar.make(view, "Posicion $position", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-            //irAToast()
-
         }
 
 
     }
 
-    fun irAToast(){
-        val intentExplicito = Intent(
-            this,
-            Main2Activity::class.java
-        )
-        startActivity(intentExplicito)
-    }
 }

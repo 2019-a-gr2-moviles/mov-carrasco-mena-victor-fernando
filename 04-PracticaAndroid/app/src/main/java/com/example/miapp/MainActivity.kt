@@ -16,17 +16,28 @@ class MainActivity : AppCompatActivity() {
             irAParcelable()
         }
 
-
         btn_toast.setOnClickListener {
             irAToast()
         }
         btn_adapter.setOnClickListener {
             irAListView()
         }
-        btn_conexion_http.setOnClickListener{
+        btn_http.setOnClickListener{
             irAHttp()
         }
 
+        btn_mapa.setOnClickListener {
+            irAMapa()
+        }
+
+    }
+
+    fun irAMapa(){
+        val intentExplicito = Intent(
+            this,
+            MapsActivity::class.java
+        )
+        startActivity(intentExplicito)
     }
 
     fun irAHttp(){

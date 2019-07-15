@@ -1,8 +1,9 @@
 package com.example.miapp
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View
 
 import kotlinx.android.synthetic.main.activity_main2.*
 
@@ -17,6 +18,14 @@ class Main2Activity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+    }
+
+    fun mostrarSnack(view: View, texto:String){
+        Snackbar
+            .make(view, texto, Snackbar.LENGTH_LONG)
+            .setAction("Action", null)
+            .show()
+
     }
 
 }

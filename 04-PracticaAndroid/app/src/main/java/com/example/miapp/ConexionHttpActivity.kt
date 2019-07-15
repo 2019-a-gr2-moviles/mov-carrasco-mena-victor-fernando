@@ -1,8 +1,9 @@
 package com.example.miapp
 
-import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.beust.klaxon.Klaxon
 import java.lang.Exception
 import java.util.*
@@ -79,7 +80,7 @@ class ConexionHttpActivity : AppCompatActivity() {
         }
 
         // node app.js
-        val url = "http://172.31.104.102:1337/empresa/1"
+        val url = "http://192.168.1.145:1337/empresa/1"
 
         url
             .httpGet()
@@ -104,7 +105,7 @@ class ConexionHttpActivity : AppCompatActivity() {
                 }
             }
 
-        val urlCrearEmpresa = "http://172.31.104.102:1337/empresa"
+        val urlCrearEmpresa = "http://192.168.1.145:1337/empresa"
 
         val parametrosCrearEmpresa = listOf(
             "nombre" to "Manticore Labs 2", // Este sirve

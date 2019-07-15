@@ -2,10 +2,10 @@ package com.example.miapp
 
 import android.app.Activity
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_intent_respuesta.*
 
 class IntentRespuestaActivity : AppCompatActivity() {

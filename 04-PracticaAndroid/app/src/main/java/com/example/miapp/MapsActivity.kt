@@ -1,5 +1,6 @@
 package com.example.miapp
 
+import android.app.Activity
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -20,13 +21,7 @@ class MapsActivity : AppCompatActivity(),
     GoogleMap.OnCameraIdleListener,
     GoogleMap.OnPolylineClickListener,
     GoogleMap.OnPolygonClickListener{
-    override fun onPolygonClick(p0: Polygon?) {
 
-    }
-
-    override fun onPolylineClick(p0: Polyline?) {
-        Log.i("map","Polilinea \${p0.toString()")
-    }
 
     private lateinit var mMap: GoogleMap
     private var tienePermisosLocalizacion = false
@@ -35,7 +30,11 @@ class MapsActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
 
+        // 1) Que permisos necesita esta actividad
+        // 2) Revisar esos permisos
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        solicitarPermisosLocalizacion()
+
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -52,13 +51,14 @@ class MapsActivity : AppCompatActivity(),
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+
         establecerConfiguracionMapa(mMap)
-        // Add a marker in Sydney and move the camera
         establecerListenersMovimientoMapa(mMap)
-        val foch = LatLng(-34.0, 151.0)
+        val foch = LatLng(-0.202760, -78.490813)
         val titulo = "Plaza Foch"
+        val zoom = 17f
         anadirMarcador(foch,titulo)
-        moverCamaraConZoom(foch)
+        moverCamaraConZoom(foch,zoom)
 
         val poliLineaUno = googleMap
             .addPolyline(
@@ -133,6 +133,7 @@ class MapsActivity : AppCompatActivity(),
             setOnCameraIdleListener ( this@MapsActivity )
             setOnCameraMoveStartedListener ( this@MapsActivity )
             setOnCameraMoveListener ( this@MapsActivity )
+
             setOnPolygonClickListener ( this@MapsActivity )
             setOnPolylineClickListener  (this@MapsActivity)
         }
@@ -162,5 +163,13 @@ class MapsActivity : AppCompatActivity(),
 
     override fun onCameraMoveStarted(p0: Int) {
         Log.i("map","me voy a empezar a mover");
+    }
+
+    override fun onPolygonClick(p0: Polygon?) {
+        Log.i("map","Polylinea ${p0.toString()}")
+    }
+
+    override fun onPolylineClick(p0: Polyline?) {
+        Log.i("map","Polilinea \${p0.toString()")
     }
 }
