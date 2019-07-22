@@ -26,7 +26,7 @@ class PrimerFragmentActivity : AppCompatActivity() {
         transaccion.replace(R.id.constraint_fragmento,primerFragmento)
         // 5) terminar la transaccion
         transaccion.commit()
-    }
+    }   
 
     fun abrirSegundoFragmento(){
         // 1) manager
