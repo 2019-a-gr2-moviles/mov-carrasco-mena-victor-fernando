@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ExamenIIB</string>
+    <string name="btn_enter">Entrar</string>
+    <string name="name">Nombre</string>
+    <string name="manageTends">Gestionar Tiendas</string>
+    <string name="createTend">Crear Tienda</string>
 </resources>
